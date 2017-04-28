@@ -324,6 +324,9 @@ public class DruidDataSourceC3P0Adapter implements DataSource, DruidDataSourceC3
         dataSource.setBreakAfterAcquireFailure(breakAfterAcquireFailure);
     }
 
+    public void setDataSourceName(String dataSourceName) {
+        dataSource.setName(dataSourceName);
+    }
     // /////////////////
 
     @Override
@@ -367,6 +370,7 @@ public class DruidDataSourceC3P0Adapter implements DataSource, DruidDataSourceC3
 
     private String  connectionTesterClassName;
     private String  automaticTestTable;
+    private String  numHelperThreads;
 
     public String getConnectionTesterClassName() {
         return connectionTesterClassName;
@@ -382,6 +386,14 @@ public class DruidDataSourceC3P0Adapter implements DataSource, DruidDataSourceC3
 
     public void setAutomaticTestTable(String automaticTestTable) {
         this.automaticTestTable = automaticTestTable;
+    }
+
+    public String getNumHelperThreads() {
+        return numHelperThreads;
+    }
+
+    public void setNumHelperThreads(String numHelperThreads) {
+        this.numHelperThreads = numHelperThreads;
     }
 
     private boolean forceIgnoreUnresolvedTransactions;
